@@ -12,6 +12,13 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation group: 'cglib', name: 'cglib-nodep', version: '3.2.12'
+    runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.21.1'
+    implementation group: 'aopalliance', name: 'aopalliance', version: '1.0'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+
+
 }
 
 test {
