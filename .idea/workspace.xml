@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb5b0635-f805-4639-9904-a75fc2ca9991" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/factory/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/factory/AbstractBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/io/ResourceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/io/ResourceLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/xml/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/AbstractBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/AbstractBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/BeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/BeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/BeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/BeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/BeanReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/BeanReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/PropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/PropertyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/factory/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/factory/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/factory/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/io/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/io/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/io/ResourceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/io/ResourceLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/io/UrlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/io/UrlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/container/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/container/bean/xml/XmlBeanDefinitionReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,20 +60,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.container.Main" />
       <module name="tiny-spring-container.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.container.*" />
+          <option name="PATTERN" value="org.container.bean.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,5 +124,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add gitignore" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package org.container.factory;
+package org.container.bean.factory;
 
 public interface BeanFactory {
 

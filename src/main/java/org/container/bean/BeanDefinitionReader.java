@@ -1,4 +1,4 @@
-package org.container;
+package org.container.bean;
 
 @FunctionalInterface
 public interface BeanDefinitionReader {

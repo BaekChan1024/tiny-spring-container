@@ -1,4 +1,4 @@
-package org.container.io;
+package org.container.bean.io;
 
 import java.net.URL;
 

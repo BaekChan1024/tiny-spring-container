@@ -1,11 +1,10 @@
-package org.container.xml;
+package org.container.bean.xml;
 
-import lombok.RequiredArgsConstructor;
-import org.container.AbstractBeanDefinitionReader;
-import org.container.BeanDefinition;
-import org.container.BeanReference;
-import org.container.PropertyValue;
-import org.container.io.ResourceLoader;
+import org.container.bean.AbstractBeanDefinitionReader;
+import org.container.bean.BeanDefinition;
+import org.container.bean.BeanReference;
+import org.container.bean.PropertyValue;
+import org.container.bean.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,7 +16,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
 import java.util.Objects;
 
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {

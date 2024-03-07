@@ -1,7 +1,7 @@
-package org.container.factory;
+package org.container.bean.factory;
 
-import org.container.BeanDefinition;
-import org.container.BeanPostProcessor;
+import org.container.bean.BeanDefinition;
+import org.container.bean.BeanPostProcessor;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
