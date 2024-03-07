@@ -29,7 +29,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
     @Override
     public void loadBeanDefinitions(String location) throws Exception {
         InputStream inputStream = getResourceLoader().getResource(location).getInputStream();
-
+        applyBeanDefinitions(inputStream);
     }
 
     protected void applyBeanDefinitions(InputStream inputStream) throws ParserConfigurationException, IOException, SAXException {
@@ -37,12 +37,13 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
         DocumentBuilder documentBuilder = factory.newDocumentBuilder();
         Document document = documentBuilder.parse(inputStream);
 
+        registerBeanDefinitions(document);
+        inputStream.close();
     }
 
     public void registerBeanDefinitions(Document document) {
         Element root = document.getDocumentElement();
-
-
+        parseBeanDefinitions(root);
     }
 
     protected void parseBeanDefinitions(Element root) {
@@ -51,7 +52,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             Node node = childNodes.item(i);
             if (node instanceof Element) {
                 Element element = (Element) node;
-
+                processBeanDefinition(element);
             }
         }
     }
