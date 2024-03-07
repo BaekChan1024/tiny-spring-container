@@ -66,4 +66,14 @@ public abstract class AbstractBeanFactory implements BeanFactory{
         }
         return beans;
     }
+
+    public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor) {
+        this.beanPostProcessors.add(beanPostProcessor);
+    }
+
+    public void preInstantiateSingletons() throws Exception {
+        for (String beanDefinitionName : beanDefinitionNames) {
+            getBean(beanDefinitionName);
+        }
+    }
 }
