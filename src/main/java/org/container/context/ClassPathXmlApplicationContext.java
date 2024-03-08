@@ -2,6 +2,7 @@ package org.container.context;
 
 import org.container.bean.BeanDefinition;
 import org.container.bean.factory.AbstractBeanFactory;
+import org.container.bean.factory.AutowireCapableBeanFactory;
 import org.container.bean.io.ResourceLoader;
 import org.container.bean.xml.XmlBeanDefinitionReader;
 
@@ -11,7 +12,11 @@ public class ClassPathXmlApplicationContext extends AbstractApplicationContext {
 
     private final String configLocation;
 
-    public ClassPathXmlApplicationContext(AbstractBeanFactory beanFactory, String configLocation) {
+    public ClassPathXmlApplicationContext(String configLocation) {
+        this(configLocation, new AutowireCapableBeanFactory());
+    }
+
+    public ClassPathXmlApplicationContext(String configLocation, AbstractBeanFactory beanFactory) {
         super(beanFactory);
         this.configLocation = configLocation;
     }

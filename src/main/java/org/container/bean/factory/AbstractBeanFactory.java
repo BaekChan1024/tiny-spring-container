@@ -44,14 +44,14 @@ public abstract class AbstractBeanFactory implements BeanFactory{
         beanDefinitionNames.add(name);
     }
 
-    protected Object createBean(BeanDefinition beanDefinition) throws InstantiationException, IllegalAccessException {
+    protected Object createBean(BeanDefinition beanDefinition) throws Exception {
         Object bean = createBeanInstance(beanDefinition);
         beanDefinition.setBean(bean);
         applyPropertyValues(bean, beanDefinition);
         return bean;
     }
 
-    protected abstract void applyPropertyValues(Object bean, BeanDefinition beanDefinition);
+    protected abstract void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws Exception;
 
     protected Object createBeanInstance(BeanDefinition beanDefinition) throws InstantiationException, IllegalAccessException {
         return beanDefinition.getBeanClass().newInstance();

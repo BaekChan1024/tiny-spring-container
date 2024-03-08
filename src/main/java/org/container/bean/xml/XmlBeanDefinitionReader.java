@@ -48,8 +48,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
         NodeList childNodes = root.getChildNodes();
         for (int i = 0; i < childNodes.getLength(); i++) {
             Node node = childNodes.item(i);
-            if (node instanceof Element) {
-                Element element = (Element) node;
+            if (node instanceof Element element) {
                 processBeanDefinition(element);
             }
         }
@@ -68,15 +67,14 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
         NodeList propertyNode = element.getElementsByTagName("property");
         for (int i = 0; i < propertyNode.getLength(); i++) {
             Node node = propertyNode.item(i);
-            if (node instanceof Element) {
-                Element propertyElement = (Element) node;
+            if (node instanceof Element propertyElement) {
                 String name = propertyElement.getAttribute("name");
                 String value = propertyElement.getAttribute("value");
-                if (Objects.nonNull(value) && !value.isEmpty()) {
+                if (!value.isEmpty()) {
                     beanDefinition.getPropertyValues().add(new PropertyValue(name, value));
                 } else {
                     String ref = propertyElement.getAttribute("ref");
-                    if (Objects.isNull(ref) || ref.isEmpty()) {
+                    if (ref.isEmpty()) {
                         throw new IllegalArgumentException("property is invalid");
                     }
                     BeanReference beanReference = new BeanReference(ref);
