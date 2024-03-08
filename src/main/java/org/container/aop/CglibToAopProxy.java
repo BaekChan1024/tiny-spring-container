@@ -37,7 +37,7 @@ public class CglibToAopProxy extends AbstractAopProxy {
             if (Objects.isNull(advisedSupport.getMethodInterceptor()) || advisedSupport.getMethodMatcher().matches(method, advisedSupport.getTargetSource().getTargetClass())) {
                 return delegateMethodInterceptor.invoke(new CglibMethodInvocation(advisedSupport.getTargetSource().getTarget(), method, args, methodProxy));
             }
-            return new CglibMethodInvocation(advisedSupport.getTargetSource().getTarget(), method, args, methodProxy);
+            return new CglibMethodInvocation(advisedSupport.getTargetSource().getTarget(), method, args, methodProxy).proceed();
         }
     }
 

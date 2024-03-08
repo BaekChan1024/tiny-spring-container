@@ -54,8 +54,7 @@ public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodM
         ShadowMatch shadowMatch = pointcutExpression.matchesAdviceExecution(method);
         if (shadowMatch.alwaysMatches()) {
             return true;
-        }
-        if (shadowMatch.neverMatches()) {
+        } else if (shadowMatch.neverMatches()) {
             return false;
         }
         return false;
