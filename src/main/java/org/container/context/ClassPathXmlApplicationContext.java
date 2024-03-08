@@ -1,4 +1,27 @@
 package org.container.context;
 
-public class ClassPathXmlApplicationContext {
+import org.container.bean.BeanDefinition;
+import org.container.bean.factory.AbstractBeanFactory;
+import org.container.bean.io.ResourceLoader;
+import org.container.bean.xml.XmlBeanDefinitionReader;
+
+import java.util.Map;
+
+public class ClassPathXmlApplicationContext extends AbstractApplicationContext {
+
+    private final String configLocation;
+
+    public ClassPathXmlApplicationContext(AbstractBeanFactory beanFactory, String configLocation) {
+        super(beanFactory);
+        this.configLocation = configLocation;
+    }
+
+    @Override
+    protected void loadBeanDefinitions(AbstractBeanFactory beanFactory) throws Exception {
+        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
+        xmlBeanDefinitionReader.loadBeanDefinitions(configLocation);
+        for (Map.Entry<String, BeanDefinition> beanDefinitionEntry : xmlBeanDefinitionReader.getRegistry().entrySet()) {
+            beanFactory.registerBeanDefinition(beanDefinitionEntry.getKey(), beanDefinitionEntry.getValue());
+        }
+    }
 }

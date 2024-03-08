@@ -57,7 +57,7 @@ public abstract class AbstractBeanFactory implements BeanFactory{
         return beanDefinition.getBeanClass().newInstance();
     }
 
-    public List<?> getBeanForType(Class<?> type) throws Exception {
+    public List getBeanForType(Class<?> type) throws Exception {
         List<Object> beans = new ArrayList<>();
         for (String beanDefinitionName : beanDefinitionNames) {
             if (type.isAssignableFrom(beanDefinitionMap.get(beanDefinitionName).getBeanClass())) {
