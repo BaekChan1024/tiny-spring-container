@@ -2,7 +2,7 @@ package org.container.aop;
 
 import org.aopalliance.aop.Advice;
 
-public class AspectJExpressionPointcutAdvisor implements PointcutAdvisor{
+public class AspectJExpressionPointcutAdvisor implements PointcutAdvisor {
 
     private final AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
     private Advice advice;
