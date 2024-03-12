@@ -28,6 +28,21 @@ public abstract class AbstractBeanFactory implements BeanFactory{
         return bean;
     }
 
+    @Override
+    public <T> T getBean(String name, Class<T> type) throws Exception {
+        BeanDefinition beanDefinition = beanDefinitionMap.get(name);
+        if (Objects.isNull(beanDefinition)) {
+            throw new IllegalArgumentException("Can't find bean name");
+        }
+        Object bean = beanDefinition.getBean();
+        if (Objects.isNull(bean)) {
+            bean = createBean(beanDefinition);
+            bean = initializeBean(bean, name);
+            beanDefinition.setBean(bean);
+        }
+        return (T) bean;
+    }
+
     protected Object initializeBean(Object bean, String name) throws Exception {
         for (BeanPostProcessor beanPostProcessor : beanPostProcessors) {
             bean = beanPostProcessor.postProcessBeforeInitialization(bean, name);

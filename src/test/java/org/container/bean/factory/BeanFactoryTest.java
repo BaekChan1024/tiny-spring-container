@@ -39,4 +39,20 @@ class BeanFactoryTest {
         HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
         helloWorldService.helloWorld();
     }
+
+    @Test
+    public void testTypePreInstantiate() throws Exception {
+        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
+        xmlBeanDefinitionReader.loadBeanDefinitions("tinyioc.xml");
+
+        AutowireCapableBeanFactory beanFactory = new AutowireCapableBeanFactory();
+        for (Map.Entry<String, BeanDefinition> beanDefinitionEntry : xmlBeanDefinitionReader.getRegistry().entrySet()) {
+            beanFactory.registerBeanDefinition(beanDefinitionEntry.getKey(), beanDefinitionEntry.getValue());
+        }
+
+        beanFactory.preInstantiateSingletons();
+
+        HelloWorldService helloWorldService = beanFactory.getBean("helloWorldService", HelloWorldService.class);
+        helloWorldService.helloWorld();
+    }
 }

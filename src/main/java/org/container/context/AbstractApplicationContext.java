@@ -36,4 +36,9 @@ public abstract class AbstractApplicationContext implements ApplicationContext{
     public Object getBean(String name) throws Exception {
         return beanFactory.getBean(name);
     }
+
+    @Override
+    public <T> T getBean(String name, Class<T> type) throws Exception {
+        return (T) beanFactory.getBean(name);
+    }
 }
